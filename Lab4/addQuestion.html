@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+	<title>Quizzes</title>
+    <link rel='stylesheet' type='text/css' href='stylesPWS/style.css' />
+	<link rel='stylesheet' 
+		   type='text/css' 
+		   media='only screen and (min-width: 530px) and (min-device-width: 481px)'
+		   href='stylesPWS/wide.css' />
+	<link rel='stylesheet' 
+		   type='text/css' 
+		   media='only screen and (max-width: 480px)'
+		   href='stylesPWS/smartphone.css' />
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="Js/js.js"></script>
+
+  </head>
+  <body>
+  <div id='page-wrap'>
+	<header class='main' id='h1'>
+      <span class="right"><a href="/login">LogIn</a> </span>
+      <span class="right" style="display:none;"><a href="/logout">LogOut</a> </span>
+	<h2>Quiz: crazy questions</h2>
+    </header>
+	<nav class='main' id='n1' role='navigation'>
+		<span><a href='layout.html'>Home</a></span>
+		<span><a href='addQuestion.html'>Quizzes</a></span>
+		<span><a href='credits.html'>Credits</a></span>
+	</nav>
+    <section class="main" id="s1">
+    
+	
+	<div>
+	<form id="galderenF" action="Zerbitzaria/addQuestionwithImage.php" name="galderenF" method="POST" enctype="multipart/form-data">
+			<label>Eposta (*)</label>
+			<input type="text" id="txt_eposta" name="txt_eposta"/><br/>
+			<label>Testua (*)</label>
+			<input type="text" id="txt_testua"name="txt_testua"/><br/>
+			<label>Erantzun zuzena (*)</label>
+			<input type="text" id="txt_erantzun_zuzena" name="txt_erantzun_zuzena"/><br/>
+			<label>Erantzun okerra 1 (*)</label>
+			<input type="text" id="txt_erantzun_okerra_1" name="txt_erantzun_okerra_1"/><br/>
+			<label>Erantzun okerra 2 (*)</label>
+			<input type="text" id="txt_erantzun_okerra_2" name="txt_erantzun_okerra_2"/><br/>
+			<label>Erantzun okerra 3 (*)</label>
+			<input type="text" id="txt_erantzun_okerra_3" name="txt_erantzun_okerra_3"/><br/>
+			<label>Galderaren zailtasuna (1 eta 5 artekoa) (*) </label>
+			<input type="text" id="txt_zailtasuna" name="txt_zailtasuna"/><br/>
+			<label>Gai-arloa (*)</label>
+			<input type="text" id="txt_gai_arloa" name="txt_gai_arloa"/><br/>
+			<label>Galderarekin zerikusia duen irudia</label>
+			<input type="file" id="f_irudia" name="f_irudia"/><br/>
+			
+			<input type="submit" id="btn_bidali" value="Bidali"/>
+	</form>
+		
+	<a href="layout.html">Itzuli</a>
+	
+	</div>
+    </section>
+	<footer class='main' id='f1'>
+		<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
+		<a href='https://github.com'>Link GITHUB</a>
+	</footer>
+</div>
+</body>
+</html>
