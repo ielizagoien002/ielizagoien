@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="nire_jquery_funtzioak.js"></script>
+        <meta charset="utf-8">
+        <title>Bi eragileen kalkulagailua</title>
+    </head>
+    <body>
+    <h1>Bi eragileen kalkulagailua</h1>
+    <style>
+        body{
+            background-color: rgb(227, 86, 227);
+        }
+    </style>
+        
+        <label>Lehen eragigaia</label>
+        <input id="lehena" type="text"/> <br/><br/>
+
+        <label>Eragilea </label>
+        <select id="eragilea">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br/><br/>
+
+        <label>Bigarren eragigaia </label>
+        <input id="bigarrena" type="text"/>  <br/><br/>
+        
+        <label>Nire ustezko erantzuna </label>
+        <input id="erantzuna" type="text"/>  <br/><br/><br/>
+
+        <button id="btn_konprobatu">Konprobatu</button>
+		<button id="btn_reset">Reset</button><br/><br/>
+
+		<input type="text" id="emaitza" style="display: none;"/>
+
+    </body>
+</html>

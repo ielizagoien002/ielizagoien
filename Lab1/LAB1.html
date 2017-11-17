@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script language="JavaScript">
+    
+    function kalkulatu (){
+        var n1 = parseFloat(document.getElementById('lehena').value);
+        var n2 = parseFloat(document.getElementById('bigarrena').value);
+        var erag = document.getElementById('eragilea').value;
+        var eran = parseFloat(document.getElementById('erantzuna').value);
+   
+        if (erag==="+"){
+            result= n1+n2;
+        }
+        
+        if (erag==="-"){
+            result= n1-n2;
+        }
+        
+        if (erag==="*"){
+            result= n1*n2;
+        }
+        
+        if (erag==="/"){
+            result= n1/n2;
+        }
+        
+        if (result===eran){
+            document.getElementById('emaitza').value = "ZUZENA!!";
+        }else{
+           document.getElementById('emaitza').value = "OKERRA!!";
+        }
+		document.getElementById('emaitza').style.display = "block";
+    }
+	
+	function reset (){
+  
+        document.getElementById('lehena').value = "";
+		document.getElementById('bigarrena').value = "";
+        document.getElementById('eragilea').value = "+";
+        document.getElementById('emaitza').value = "";
+		document.getElementById('erantzuna').value = "";
+		document.getElementById('emaitza').style.display = "none";
+
+        
+    }
+     
+    </script>
+        <meta charset="utf-8">
+        <title>Bi eragileen kalkulagailua</title>
+    </head>
+    <body>
+    <h1>Bi eragileen kalkulagailua</h1>
+    <style>
+        body{
+            background-color: rgb(227, 86, 227);
+        }
+    </style>
+        
+        <label>Lehen eragigaia</label>
+        <input id="lehena" type="text"/> <br/><br/>
+
+        <label>Eragilea </label>
+        <select id="eragilea">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br/><br/>
+
+        <label>Bigarren eragigaia </label>
+        <input id="bigarrena" type="text"/>  <br/><br/>
+        
+        <label>Nire ustezko erantzuna </label>
+        <input id="erantzuna" type="text"/>  <br/><br/><br/>
+
+        <button onclick="kalkulatu();">Konprobatu</button>
+		<button onclick="reset();">Reset</button><br/><br/>
+
+		<input type="text" id="emaitza" style="display: none;"/>
+
+    </body>
+</html>

@@ -52,7 +52,7 @@
 				echo '	<span><a href="layout.php?erabiltzailea=' . $erab . '">Home</a></span>
 						<span><a href="addQuestionwithImage.php?erabiltzailea=' . $erab . '">Galdera gehitu</a></span>
 						<span><a href="showQuestionswithImages.php?erabiltzailea=' . $erab . '">Galderak ikusi</a></span>
-						<span><a href="showXMLQuestions.php?erabiltzailea=' . $erab . '">Galderak ikusi XML</a></span>
+						<span><a href="showQuestionswithImages.php?erabiltzailea=' . $erab . '">Galderak ikusi</a></span>
 						<span><a>Quizzes</a></span>
 						<span><a href="credits.php?erabiltzailea=' . $erab . '">Credits</a></span>';
 			}
@@ -202,31 +202,6 @@ if(isset($_GET['erabiltzailea'])){
 		$connection->close();
 		 
 		 echo '<a href = "layout.php?erabiltzailea=' . $eposta . '" >Hasierara itzuli</a>';
-		 
-		 try{
-			$galderakXML = simplexml_load_file("../xml/questions.xml");
-
-			$assessmentItem = $galderakXML->addChild('assessmentItem');
-			$assessmentItem->addAttribute('complexity', $zailtasuna);
-			$assessmentItem->addAttribute('subject', $gai_arloa);
-
-			$itemBody = $assessmentItem->addChild('itemBody');
-			$p = $itemBody -> addChild('p',$testua);
-
-			$correctResponse = $assessmentItem->addChild('correctResponse');
-			$value = $correctResponse -> addChild('value',$erantzunZuzena);
-
-			$incorrectResponses = $assessmentItem->addChild('incorrectResponses');
-			$value1 = $incorrectResponses -> addChild('value',$erantzun_okerra_1);
-			$value2 = $incorrectResponses -> addChild('value',$erantzun_okerra_2);
-			$value3 = $incorrectResponses -> addChild('value',$erantzun_okerra_3);
-
-			echo $galderakXML -> asXML("../xml/questions.xml");
-			echo '<script language="javascript" type="text/javascript"> alert("Txertaketa ondo egin da"); </script>';
-
-		}catch(Exception $e){
-			echo '<script language="javascript" type="text/javascript"> alert("Errorea gertatu da"); </script>';
-		}
 	}
 }
 
