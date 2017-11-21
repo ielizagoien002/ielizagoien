@@ -5,6 +5,48 @@
 		<title>Sign up</title>
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 		<script type="text/javascript" src="../Js/js.js"></script>
+		<script>
+			$epostaZuzena = false;
+			$pasahitzaZuzena = false;
+		
+			var e = new XMLHttpRequest();
+			var p = new XMLHttpRequest();
+			
+			e.onreadystatechange = function(){
+				if ((e.readyState == 4)&&(e.status == 200)){
+					if (e.responseText == 'BAI'){
+						$epostaZuzena = true;
+					}else{
+						$epostaZuzena = false;
+					}
+					if ($epostaZuzena && $pasahitzaZuzena){
+						document.getElementById("bidali").disabled = false;
+					}else{
+						document.getElementById("bidali").disabled = true;
+					}
+				}					
+			}
+			
+			p.onreadystatechange = function(){
+				if ((p.readyState == 4)&&(p.status == 200)){
+					if (p.responseText == 'BALIOZKOA'){
+						$pasahitzaZuzena = true;
+						
+					}else{
+						$pasahitzaZuzena = false;
+						
+					}
+					if ($epostaZuzena && $pasahitzaZuzena){
+						document.getElementById("bidali").disabled = false;
+					}else{
+						document.getElementById("bidali").disabled = true;
+					}
+				}					
+			}
+			
+			
+			
+			</script>
 	</head>
 	
 	<body>
