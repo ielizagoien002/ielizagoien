@@ -50,7 +50,7 @@
 		}
 		
 		$eposta = $_POST['txt_eposta'];
-		$pasahitza = $_POST['pwd_pasahitza'];
+		$pasahitza = crypt($_POST['pwd_pasahitza']);
 		$deitura = $_POST['txt_deitura'];
 		$goitizena = $_POST['txt_goitizena'];
 		$argazkia = NULL;
